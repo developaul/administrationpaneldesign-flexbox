@@ -27,3 +27,156 @@ img {
 .oculto {
   display: none;
 }
+
+.pagina {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.header {
+  display: flex;
+}
+
+.header .nombre-sitio {
+  background-color: #003f8c;
+  padding: 1rem;
+  flex: 0 0 5rem;
+}
+
+.header .nombre-sitio h1 {
+  color: #FFFFFF;
+  margin: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  .header .nombre-sitio {
+    flex: 0 0 20rem;
+  }
+}
+
+.header .nombre-sitio .escritorio {
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  .header .nombre-sitio .escritorio {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .header .nombre-sitio .movil {
+    display: none;
+  }
+}
+
+.barra {
+  background-color: #005b9f;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.barra .menu-izquierdo {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.barra .menu-izquierdo i {
+  color: #FFFFFF;
+  font-size: 1.4rem;
+}
+
+.barra .menu-izquierdo .fa-arrow-right {
+  display: none;
+}
+
+.barra .menu-derecho {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.barra .menu-derecho .desktop {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .barra .menu-derecho {
+    padding: 0;
+  }
+  .barra .menu-derecho > i {
+    display: none;
+  }
+  .barra .menu-derecho .desktop {
+    display: flex;
+    height: 100%;
+  }
+  .barra .menu-derecho .desktop .caja {
+    height: 100%;
+    display: flex;
+    padding: 0 1rem;
+    align-items: center;
+  }
+  .barra .menu-derecho .desktop .caja:hover {
+    background-color: #004c86;
+  }
+  .barra .menu-derecho .desktop .caja a {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+  .barra .menu-derecho .desktop .caja span {
+    margin-left: 1rem;
+    border-radius: 50%;
+    padding: .3rem;
+    background-color: #009045;
+  }
+}
+
+.barra .menu-derecho i {
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  position: relative;
+}
+
+.barra .menu-derecho i .cajas {
+  display: none;
+}
+
+.barra .menu-derecho i:hover .cajas {
+  display: flex;
+  position: absolute;
+  min-height: 10rem;
+  top: 100%;
+  right: 0;
+  flex-direction: column;
+}
+
+.barra .menu-derecho i:hover .cajas .caja {
+  background-color: #005b9f;
+  display: flex;
+  font-size: 1rem;
+  width: 10rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.barra .menu-derecho i:hover .cajas .caja:hover {
+  background-color: #004c86;
+}
+
+.barra .menu-derecho i:hover .cajas .caja a {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.barra .menu-derecho i:hover .cajas .caja span {
+  border-radius: 50%;
+  padding: .3rem;
+  background-color: #009045;
+}

@@ -1,3 +1,4 @@
+// General
 html {
     @include box-sizing(border-box);
     height: 100%;
@@ -26,4 +27,196 @@ img {
 .oculto {
     display: none;
 }
+
+
+// Pagina
+.pagina {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+
+// Header
+.header {
+    display: flex;
+
+    .nombre-sitio {
+        background-color: $secundario;
+        padding: 1rem;
+        flex: 0 0 5rem;
+        
+        h1 {
+            color: $blanco;
+            margin: 0;
+        }
+
+        @include desktop {
+            flex: 0 0 20rem;
+        }
+
+        .escritorio {
+            display: none;
+
+            @include desktop {
+                display: block;
+            }
+        }
+
+        .movil {
+            @include desktop {
+                display: none;
+            }
+        }
+    }
+}
+
+
+// Barra 
+.barra {
+    background-color: $primario;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+
+    .menu-izquierdo {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        
+        i {
+            color: $blanco;
+            font-size: 1.4rem;
+        }
+
+        .fa-arrow-right {
+            display: none;
+        }
+    }
+
+    .menu-derecho {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+
+        .desktop {
+            display: none;
+        }
+
+        @include tablet {
+            padding: 0;
+
+            > i {
+                display: none;
+            }
+
+            .desktop {
+                display: flex;
+                height: 100%;
+
+                .caja {
+                    height: 100%;
+                    display: flex;
+                    padding: 0 1rem;
+                    align-items: center;
+                    
+                    &:hover {
+                        background-color: darken( $primario, 5 );
+                    }
+                    
+                    a {
+                        color: $blanco;
+                        text-decoration: none;
+                    }
+
+                    span {
+                        margin-left: 1rem;
+                        border-radius: 50%;
+                        padding: .3rem;
+                        background-color: $terciario;
+                    }
+                }
+            }
+        }
+
+        i {
+            color: $blanco;
+            font-size: 1.4rem;
+            position: relative;
+
+            .cajas {
+                display: none;
+            }
+
+            &:hover {
+
+                .cajas {
+                    display: flex;
+                    position: absolute;
+                    min-height: 10rem;
+                    top: 100%;
+                    right: 0;
+                    flex-direction: column;
+
+
+                    .caja {
+                        background-color: $primario;
+                        display: flex;
+                        font-size: 1rem;
+                        width: 10rem;
+                        padding: 1rem 0;
+                        border-bottom: 1px solid $gris;
+                        
+                        &:hover {
+                            background-color: darken( $primario, 5 );
+                        }
+
+                        a {
+                            display: flex;
+                            flex: 1;
+                            justify-content: space-evenly;
+                            text-decoration: none;
+                            color: $blanco;
+
+                        }
+                        
+                        span {
+                            border-radius: 50%;
+                            padding: .3rem;
+                            background-color: $terciario;
+                        }
+                    }
+                }
+            }
+        }
+
+        // .caja {
+        //     padding: 1rem 0;
+        //     display: flex;
+        //     align-items: center;
+
+        //     &:hover {
+        //         background-color: darken( $primario, 4 );
+        //     }
+
+        //     a {
+        //         text-decoration: none;
+        //         color: $blanco;
+        //     }
+        // }
+
+        // @include tablet {
+        //     flex-direction: row;
+
+        //     .caja {
+        //         padding: 0 1rem;
+        //     }
+        // }
+        
+        
+
+
+    }
+}
+
 
