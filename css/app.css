@@ -28,6 +28,10 @@ img {
   display: none;
 }
 
+.no-menu.pagina .sidebar {
+  margin-left: -20rem;
+}
+
 .pagina {
   display: flex;
   flex-direction: column;
@@ -152,6 +156,7 @@ img {
   top: 100%;
   right: 0;
   flex-direction: column;
+  z-index: 2;
 }
 
 .barra .menu-derecho i:hover .cajas .caja {
@@ -179,4 +184,201 @@ img {
   border-radius: 50%;
   padding: .3rem;
   background-color: #009045;
+}
+
+.contenedor-principal {
+  display: flex;
+  position: relative;
+  flex: 1;
+}
+
+.sidebar {
+  color: #FFFFFF;
+  padding: 1rem;
+  background-color: #373737;
+  position: absolute;
+  min-height: 100%;
+  max-width: 20rem;
+  transition: margin-left .3s ease;
+}
+
+.sidebar .usuario {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-weight: normal;
+}
+
+.sidebar .usuario img {
+  max-width: 5rem;
+}
+
+.sidebar .usuario span {
+  font-weight: bold;
+  display: block;
+}
+
+.sidebar .buscador {
+  margin-top: 1rem;
+}
+
+.sidebar .buscador input[type="text"] {
+  width: 100%;
+  height: 3rem;
+  border: none;
+  border-radius: 10px;
+  padding-left: 1rem;
+}
+
+.sidebar .menu-admin {
+  margin-top: 2rem;
+}
+
+.menu-admin .menu {
+  list-style: none;
+  padding: 0 0 0 1rem;
+}
+
+.menu-admin .menu > li {
+  padding: .5rem;
+}
+
+.menu-admin .menu > li:hover ul {
+  display: block;
+}
+
+.menu-admin .menu > li a {
+  text-decoration: none;
+  color: #FFFFFF;
+  padding: .5rem;
+  transition: padding-left .3s ease;
+}
+
+.menu-admin .menu > li a:hover {
+  background-color: #005b9f;
+  padding-left: 2rem;
+}
+
+.menu-admin .menu > li ul {
+  display: none;
+  margin-top: 1rem;
+  list-style: none;
+  background-color: #2f2f2f;
+  padding: 1rem;
+}
+
+.menu-admin .menu > li ul li {
+  margin-bottom: 1rem;
+}
+
+.menu-admin .menu > li ul li:last-of-type {
+  margin-bottom: 0;
+}
+
+.contenido {
+  flex: 1;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.formulario {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.formulario .campo {
+  flex: 0 0 100%;
+  display: flex;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .formulario .campo {
+    flex: 0 0 calc( 50% - 1rem);
+  }
+}
+
+.formulario .campo.expandir {
+  flex: 0 1 calc( 100%);
+  align-items: flex-start;
+  width: 10rem;
+}
+
+.formulario .campo.expandir label {
+  flex: 0 0 calc( 12.5%);
+}
+
+.formulario .campo.expandir textarea {
+  flex-shrink: 1;
+}
+
+@media only screen and (min-width: 480px) {
+  .formulario .campo.expandir textarea {
+    flex-shrink: 1;
+    width: 100%;
+  }
+}
+
+.formulario .campo label {
+  flex: 0 0 25%;
+}
+
+.formulario .campo input[type="text"] {
+  height: 2rem;
+}
+
+@media only screen and (min-width: 480px) {
+  .formulario .campo input[type="text"] {
+    flex-shrink: 1;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .formulario .campo input[type="text"] {
+    flex: 1;
+  }
+}
+
+.formulario .campo .opciones {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.formulario .campo .opciones .opcion {
+  flex: 0 0 calc( 50% - .5rem);
+}
+
+@media only screen and (min-width: 768px) {
+  .formulario .campo .opciones .opcion {
+    flex: 1;
+  }
+}
+
+.formulario .campo .opciones label {
+  padding-left: 1rem;
+}
+
+.formulario .campo.enviar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.formulario .campo.enviar .boton {
+  background-color: #005b9f;
+  padding: .5rem 1rem;
+  display: block;
+  text-align: center;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: background-color .3s ease;
+}
+
+.formulario .campo.enviar .boton:hover {
+  cursor: pointer;
+  background-color: #003e6c;
 }
